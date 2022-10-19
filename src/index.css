@@ -9,11 +9,16 @@ body {
 
 /* /////////////for react-classes///////////// */
 .error {
-  border: 1px solid #f74848;
-  color: #f74848;
+  border: 2px solid #b53232;
+  color: #b53232;
 }
 
-.color-light {
+.error:focus {
+  color: #b53232;
+  outline: 2px solid #b53232;
+}
+
+.color-div-light {
   color: rgb(229, 227, 227);
 }
 
@@ -39,26 +44,23 @@ body {
 }
 
 input {
+  color: #357fb3;
   width: 90px;
   font-weight: 600;
   padding: 6px 10px;
   font-size: 0.8rem;
-  border-color: transparent;
   border-top-left-radius: 8px;
   border-bottom: none;
-}
-
-input:focus {
-  outline: 1px solid rgb(84, 181, 250);
+  /* border: 2px solid #357fb3; */
 }
 
 .btn {
-  padding: 7px 10px;
+  padding: 9px;
   font-weight: 600;
   font-size: 0.87rem;
   margin-left: -5px;
   color: rgb(238, 236, 236);
-  border-top: 1.5px solid rgb(84, 181, 250);
+  border-top: 1.5px solid #54b5fa;
   border-right: 2px solid rgb(4, 207, 177);
   border-left: 1.5px solid rgb(4, 207, 177);
   border-bottom: none;
@@ -71,17 +73,17 @@ input:focus {
 }
 
 .btn:hover {
-  background-color: rgb(100, 2, 93);
+  background-color: #043659;
 }
 
-.colors {
+.colors-box {
   min-height: calc(100vh - 120px);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(223.33px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(96px, 1fr));
 }
 
-.color {
+.color-div {
   height: 100%;
   cursor: pointer;
   font-size: 1rem;

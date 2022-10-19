@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import SingleColor from "./SingleColor";
 import Values from "values.js";
 import "./index.css";
@@ -6,16 +6,38 @@ import "./index.css";
 // import { getValue } from "@testing-library/user-event/dist/utils";
 
 function App() {
-  const [color, setColor] = useState("");
+  const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const [list, setList] = useState(new Values("#40caf8").all(10));
+  // const [border, setBorder] = useState("#357fb3");
+  const [color, setColor] = useState("#357fb3");
+
+  const handleFocus = () => {
+    setColor("#54b5fa");
+  };
+  // :ChangeEvent<HTMLInputElement>
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValue(value);
+
+    if (value.includes("#") & (value.length === 7)) {
+      setColor("#357fb3");
+    }
+    if (value.length < 7 || !value.includes("#") || value.length > 7) {
+      setColor("#f74848");
+    }
+    if (value === "") {
+      setColor("#357fb3");
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     try {
-      let colors = new Values(color).all(10);
-      setList(colors);
+      let valuePattern = new Values(value).all(10);
+      setList(valuePattern);
     } catch (error) {
       setError(true);
       console.log(error);
@@ -29,10 +51,16 @@ function App() {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            value={color}
-            onChange={(e) => setColor(e.target.value)}
+            value={value}
             placeholder="#f15025"
+            onChange={handleChange}
+            onFocus={handleFocus}
             className={`${error ? "error" : null}`}
+            style={{
+              color: `${color}`,
+              border: `2px solid ${color}`,
+              outline: `2px solid ${color}`,
+            }}
           />
 
           <button className="btn" type="submit">
@@ -41,14 +69,14 @@ function App() {
         </form>
       </div>
 
-      <section className="colors">
-        {list.map((color, index) => {
+      <section className="colors-box">
+        {list.map((inputValue, index) => {
           return (
             <SingleColor
               key={index}
-              {...color}
+              {...inputValue}
               index={index}
-              hexColor={color.hex}
+              hexColor={inputValue.hex}
             />
           );
         })}

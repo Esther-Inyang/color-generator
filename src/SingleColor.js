@@ -5,7 +5,7 @@ import "./index.css";
 function SingleColor({ rgb, weight, index, hexColor }) {
   const [alert, setAlert] = useState(false);
   const bcg = rgb.join(",");
-  console.log(hexColor);
+
   // const hex = rgbToHex(...rgb);
 
   const hexValue = `#${hexColor}`;
@@ -21,7 +21,7 @@ function SingleColor({ rgb, weight, index, hexColor }) {
     <article className="colors-container">
       <div
         title="click to copy color"
-        className={`color ${index > 10 && "color-light"}`}
+        className={`color-div ${index > 10 && "color-div-light"}`}
         style={{ backgroundColor: `rgb(${bcg})` }}
         onClick={() => {
           setAlert(true);
