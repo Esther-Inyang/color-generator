@@ -8,15 +8,6 @@ body {
 }
 
 /* /////////////for react-classes///////////// */
-.error {
-  border: 2px solid #b53232;
-  color: #b53232;
-}
-
-.error:focus {
-  color: #b53232;
-  outline: 2px solid #b53232;
-}
 
 .color-div-light {
   color: rgb(229, 227, 227);

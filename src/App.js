@@ -3,19 +3,15 @@ import SingleColor from "./SingleColor";
 import Values from "values.js";
 import "./index.css";
 
-// import { getValue } from "@testing-library/user-event/dist/utils";
-
 function App() {
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const [list, setList] = useState(new Values("#40caf8").all(10));
-  // const [border, setBorder] = useState("#357fb3");
   const [color, setColor] = useState("#357fb3");
 
   const handleFocus = () => {
     setColor("#54b5fa");
   };
-  // :ChangeEvent<HTMLInputElement>
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,6 +36,7 @@ function App() {
       setList(valuePattern);
     } catch (error) {
       setError(true);
+      error ? setColor("#f74848") : setColor("#357fb3");
       console.log(error);
     }
   };
@@ -55,7 +52,6 @@ function App() {
             placeholder="#f15025"
             onChange={handleChange}
             onFocus={handleFocus}
-            className={`${error ? "error" : null}`}
             style={{
               color: `${color}`,
               border: `2px solid ${color}`,
