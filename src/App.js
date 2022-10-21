@@ -54,8 +54,8 @@ function App() {
             onFocus={handleFocus}
             style={{
               color: `${color}`,
-              border: `2px solid ${color}`,
-              outline: `2px solid ${color}`,
+              border: `1.5px solid ${color}`,
+              outline: `1.5px solid ${color}`,
             }}
           />
 
