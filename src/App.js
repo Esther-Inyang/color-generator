@@ -44,8 +44,8 @@ function App() {
   return (
     <section className="container">
       <div className="header-section">
-        <h1 className="page-title">Color generator App</h1>
-        <form onSubmit={handleSubmit}>
+        <h1 className="page-title">Color generator</h1>
+        <form onSubmit={handleSubmit} className="form">
           <input
             type="text"
             value={value}

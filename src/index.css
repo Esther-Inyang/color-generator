@@ -21,6 +21,9 @@ body {
 .header-section {
   display: grid;
   place-items: center;
+}
+
+.header-section {
   height: 120px;
 }
 
@@ -34,19 +37,24 @@ body {
   padding: 0 10px;
 }
 
+.form {
+  text-align: center;
+}
+
 input {
   color: #357fb3;
-  width: 120px;
+  width: 9rem;
   font-weight: 600;
   padding: 6px 10px;
   font-size: 0.8rem;
   border-top-left-radius: 8px;
   border-bottom: none;
+  border-bottom-right-radius: 12px;
   /* border: 2px solid #357fb3; */
 }
 
 .btn {
-  padding: 9px;
+  padding: 7px 10px;
   font-weight: 600;
   font-size: 0.87rem;
   margin-left: -5px;
@@ -54,17 +62,19 @@ input {
   border-top: 1.5px solid #54b5fa;
   border-right: 2px solid rgb(4, 207, 177);
   border-left: 1.5px solid rgb(4, 207, 177);
-  border-bottom: none;
+  /* border-bottom: none; */
+  border-bottom: 1px solid #54b5fa;
   background-color: #076b8c;
   border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 15px;
   transition: all 0.2s linear;
   cursor: pointer;
   letter-spacing: 2px;
 }
 
 .btn:hover {
-  background-color: #043659;
+  color: white;
+  background-color: rgb(4, 207, 177);
 }
 
 .colors-box {
